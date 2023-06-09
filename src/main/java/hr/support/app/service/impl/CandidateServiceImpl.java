@@ -1,12 +1,12 @@
-package intens.intensinterviewtask.service.impl;
+package hr.support.app.service.impl;
 
-import intens.intensinterviewtask.dao.CandidateDao;
-import intens.intensinterviewtask.dao.SkillDao;
-import intens.intensinterviewtask.domain.Candidate;
-import intens.intensinterviewtask.domain.Skill;
-import intens.intensinterviewtask.dto.CandidateDto;
-import intens.intensinterviewtask.mapper.CandidateMapper;
-import intens.intensinterviewtask.service.CandidateService;
+import hr.support.app.dao.CandidateDao;
+import hr.support.app.dao.SkillDao;
+import hr.support.app.dto.CandidateDto;
+import hr.support.app.domain.Candidate;
+import hr.support.app.domain.Skill;
+import hr.support.app.mapper.CandidateMapper;
+import hr.support.app.service.CandidateService;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -45,7 +45,13 @@ public class CandidateServiceImpl implements CandidateService {
                 throw new EntityExistsException("Candidate already exists!");
             }
         }
-        Candidate candidate = candidateDao.save(candidateMapper.toEntity(candidateDto));
+        if(candidateDto.getEmail() != null){
+            Optional<Candidate> entity = candidateDao.findByEmail(candidateDto.getEmail());
+            if (entity.isPresent()) {
+                throw new EntityExistsException("Candidate with email: " + candidateDto.getEmail() + " already exists!");
+            }
+        }
+            Candidate candidate = candidateDao.save(candidateMapper.toEntity(candidateDto));
         return candidateMapper.toDto(candidate);
     }
 

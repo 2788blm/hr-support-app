@@ -1,38 +1,34 @@
-package intens.intensinterviewtask.domain;
+package hr.support.app.dto;
 
-
-
+import hr.support.app.domain.Skill;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 import java.util.Set;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"email"}))
-@Entity
-public class Candidate {
+public class CandidateDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     private String fullName;
 
     private LocalDate dateOfBirth;
 
+    @NotBlank
     private String contactNumber;
 
+    @NotBlank
     private String email;
 
-    @ManyToMany
     private Set<Skill> skills;
-
-
 
 
 }

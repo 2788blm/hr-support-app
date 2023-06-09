@@ -1,10 +1,10 @@
-package intens.intensinterviewtask.service.impl;
+package hr.support.app.service.impl;
 
-import intens.intensinterviewtask.dao.SkillDao;
-import intens.intensinterviewtask.domain.Skill;
-import intens.intensinterviewtask.dto.SkillDto;
-import intens.intensinterviewtask.mapper.SkillMapper;
-import intens.intensinterviewtask.service.SkillService;
+import hr.support.app.dao.SkillDao;
+import hr.support.app.domain.Skill;
+import hr.support.app.dto.SkillDto;
+import hr.support.app.mapper.SkillMapper;
+import hr.support.app.service.SkillService;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

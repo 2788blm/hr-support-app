@@ -1,9 +1,9 @@
-package intens.intensinterviewtask.controller;
+package hr.support.app.controller;
 
 
-import intens.intensinterviewtask.dto.CandidateDto;
-import intens.intensinterviewtask.service.CandidateService;
-import intens.intensinterviewtask.service.SkillService;
+import hr.support.app.dto.CandidateDto;
+import hr.support.app.service.CandidateService;
+import hr.support.app.service.SkillService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
@@ -91,7 +91,7 @@ public class CandidateController {
         return new ResponseEntity<Page<CandidateDto>>(candidateService.filterBySkill(pageNo, pageSize, sortBy, sortOrder, skillFilter), new HttpHeaders(), HttpStatus.OK);
     }
 
-    @PutMapping("{id}/skill/{skillId}")
+    @PutMapping("{candidateId}/skill/{skillId}")
     public ResponseEntity<Object> addSkill(@PathVariable Long candidateId, @PathVariable Long skillId) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(candidateService.addSkill(candidateId, skillId));
@@ -100,7 +100,7 @@ public class CandidateController {
         }
     }
 
-    @DeleteMapping("{id}/skill/{skillId}")
+    @DeleteMapping("{candidateId}/skill/{skillId}")
     public ResponseEntity<Object> removeSkill(@PathVariable Long candidateId, @PathVariable Long skillId) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(candidateService.removeSkill(candidateId, skillId));

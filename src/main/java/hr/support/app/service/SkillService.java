@@ -1,6 +1,6 @@
-package intens.intensinterviewtask.service;
+package hr.support.app.service;
 
-import intens.intensinterviewtask.dto.SkillDto;
+import hr.support.app.dto.SkillDto;
 import org.springframework.data.domain.Page;
 
 import javax.persistence.EntityExistsException;

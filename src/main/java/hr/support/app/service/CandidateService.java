@@ -1,6 +1,6 @@
-package intens.intensinterviewtask.service;
+package hr.support.app.service;
 
-import intens.intensinterviewtask.dto.CandidateDto;
+import hr.support.app.dto.CandidateDto;
 import org.springframework.data.domain.Page;
 
 import javax.persistence.EntityExistsException;

@@ -1,4 +1,4 @@
-package intens.intensinterviewtask.dto;
+package hr.support.app.dto;
 
 
 

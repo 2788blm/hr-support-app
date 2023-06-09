@@ -1,8 +1,8 @@
-package intens.intensinterviewtask.controller;
+package hr.support.app.controller;
 
 
-import intens.intensinterviewtask.dto.SkillDto;
-import intens.intensinterviewtask.service.SkillService;
+import hr.support.app.dto.SkillDto;
+import hr.support.app.service.SkillService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;

@@ -1,4 +1,4 @@
-package intens.intensinterviewtask.domain;
+package hr.support.app.domain;
 
 
 
@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Skill {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;

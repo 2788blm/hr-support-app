@@ -1,6 +1,6 @@
-package intens.intensinterviewtask.dao;
+package hr.support.app.dao;
 
-import intens.intensinterviewtask.domain.Skill;
+import hr.support.app.domain.Skill;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
